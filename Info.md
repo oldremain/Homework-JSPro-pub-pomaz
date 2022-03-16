@@ -4,6 +4,19 @@
 Доступ к полям на чтение осуществлять через get-функции.
 Доступ к полям на запись осуществлять через set-функции с проверкой корректности входных данных.
 В классе должны быть три разнотипных поля.
+// get country() {
+// return this.\_citizenship;
+// }
+// set country(value: string) {
+// const countries: string[] = ['PLN', 'UA', 'LV', 'LT', 'BY'];
+// const candidate: string | undefined = countries.find((el) => el === value);
+
+// if (candidate) {
+// this.\_citizenship = candidate;
+// } else {
+// console.log('There isn`t such country');
+// }
+// }
 
 Вариант 2. Разработать класс, содержащий информацию о сотруднике и его зарплате.
 Требования к реализации:

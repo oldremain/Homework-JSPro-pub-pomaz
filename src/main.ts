@@ -6,20 +6,20 @@
 // В классе должны быть три разнотипных поля.
 
 class Contributor {
-  private _adress: string;
   private _name: string;
   private _sumDeposit: number;
   private _isResident: boolean;
+  public citizenship: string;
 
   constructor(
     personName: string,
-    personAdress: string = 'Undefined adress',
     personMoney: number,
-    residentStatus: boolean
+    country: string,
+    residentStatus: boolean = true
   ) {
     this._name = personName;
-    this._adress = personAdress;
     this._sumDeposit = personMoney;
+    this.citizenship = country;
     this._isResident = residentStatus;
   }
 
@@ -27,20 +27,10 @@ class Contributor {
     return this._name;
   }
   set name(value: string) {
-    const itsOk = confirm('Are you sure?');
-    if (itsOk) {
-      this._name = value;
-    }
-  }
-
-  get adress() {
-    return this._adress;
-  }
-  set adress(value: string) {
-    if (value.length === 0) {
-      alert('You typed incorrect adress');
+    if (value.length < 2) {
+      console.log('Too short name');
     } else {
-      this._adress = value;
+      this._name = value;
     }
   }
 
@@ -48,12 +38,10 @@ class Contributor {
     return this._sumDeposit;
   }
   set sumDeposit(value: number) {
-    if (value > 10000) {
-      this._sumDeposit = confirm('Check the sum. Confirm input')
-        ? value
-        : this._sumDeposit;
-    } else if (value > 0) {
-      this._sumDeposit = value;
+    if (value < 0) {
+      console.log('The sum must be > 0');
+    } else {
+      this._sumDeposit = parseFloat(value.toFixed(2));
     }
   }
 
@@ -61,21 +49,26 @@ class Contributor {
     return this._isResident;
   }
   set resident(value: boolean) {
-    if (this._isResident && value === false) {
-      this._isResident = confirm('Are you sure ?') ? value : !value;
+    if (this.citizenship === 'BY' && value === false) {
+      console.log('Change citizenship first');
     } else {
       this._isResident = value;
     }
   }
 }
 
-const contributor = new Contributor('Alex', 'Prospekt Popedy', 1000, true);
+const contributor = new Contributor('Alex', 1000, 'BY');
 
-contributor.adress = 'LA 4566-09';
-//bankworker.sumDeposit = 50000;
-//contributor.resident = false;
+contributor.name = 'Ivan';
 
-console.log(contributor.adress);
+contributor.sumDeposit = 500.12;
+
+//contributor.citizenship = 'PLN';
+
+contributor.resident = false;
+
+console.log(contributor.name);
 console.log(contributor.sumDeposit);
 console.log(contributor.resident);
+console.log(contributor.citizenship);
 console.log(contributor);
