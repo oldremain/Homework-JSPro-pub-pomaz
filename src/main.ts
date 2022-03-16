@@ -41,7 +41,7 @@ class Contributor {
     if (value < 0) {
       console.log('The sum must be > 0');
     } else {
-      this._sumDeposit = parseFloat(value.toFixed(2));
+      this._sumDeposit = value;
     }
   }
 
@@ -61,7 +61,7 @@ const contributor = new Contributor('Kolosov', 1000, 'BY');
 
 contributor.surname = 'Ivanov';
 
-contributor.sumDeposit = 500.12;
+contributor.sumDeposit = 500.4;
 
 //contributor.citizenship = 'PLN';
 
