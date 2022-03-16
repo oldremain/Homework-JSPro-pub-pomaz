@@ -1,2 +1,3 @@
 # TS
-TypeScript
+
+HomeWork - Задача 3. Классы
