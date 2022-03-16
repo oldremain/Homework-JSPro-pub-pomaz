@@ -105,5 +105,4 @@ dist
 .tern-port
 
 #info.md
-*.md
-!README.md
+/Info
