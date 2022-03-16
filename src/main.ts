@@ -6,31 +6,31 @@
 // В классе должны быть три разнотипных поля.
 
 class Contributor {
-  private _name: string;
+  private _surname: string;
   private _sumDeposit: number;
   private _isResident: boolean;
   public citizenship: string;
 
   constructor(
-    personName: string,
+    personSurname: string,
     personMoney: number,
     country: string,
     residentStatus: boolean = true
   ) {
-    this._name = personName;
+    this._surname = personSurname;
     this._sumDeposit = personMoney;
     this.citizenship = country;
     this._isResident = residentStatus;
   }
 
-  get name() {
-    return this._name;
+  get surname() {
+    return this._surname;
   }
-  set name(value: string) {
+  set surname(value: string) {
     if (value.length < 2) {
-      console.log('Too short name');
+      console.log('Too short');
     } else {
-      this._name = value;
+      this._surname = value;
     }
   }
 
@@ -57,9 +57,9 @@ class Contributor {
   }
 }
 
-const contributor = new Contributor('Alex', 1000, 'BY');
+const contributor = new Contributor('Kolosov', 1000, 'BY');
 
-contributor.name = 'Ivan';
+contributor.surname = 'Ivanov';
 
 contributor.sumDeposit = 500.12;
 
@@ -67,7 +67,7 @@ contributor.sumDeposit = 500.12;
 
 contributor.resident = false;
 
-console.log(contributor.name);
+console.log(contributor.surname);
 console.log(contributor.sumDeposit);
 console.log(contributor.resident);
 console.log(contributor.citizenship);
