@@ -5,7 +5,7 @@
 // Доступ к полям на запись осуществлять через set-функции с проверкой корректности входных данных.
 // В классе должны быть три разнотипных поля.
 
-class Person {
+class Contributor {
   private _adress: string;
   private _name: string;
   private _sumDeposit: number;
@@ -69,7 +69,7 @@ class Person {
   }
 }
 
-const contributor = new Person('Alex', 'Prospekt Popedy', 1000, true);
+const contributor = new Contributor('Alex', 'Prospekt Popedy', 1000, true);
 
 contributor.adress = 'LA 4566-09';
 //bankworker.sumDeposit = 50000;
