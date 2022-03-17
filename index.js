@@ -1,14 +1,16 @@
-// Строки
-// 1	Удалить из предложения все слова все слова, содержащие заданный символ.
+// Массивы
 
-let lorem =
-  'Mi egestas cubilia felis nam facilisis sollicitudin. Lorem aptent senectus vel penatibus diam mus per. Dapibus leo sollicitudin ridiculus';
+const array = [-1, 0, 10, 4, 7, 200, 25];
 
-function deleteWordsByChar(str, char) {
-  return str
-    .split(' ')
-    .filter((word) => !word.includes(char))
-    .join(' ');
+// 1. Дан вектор A(n). Найти наибольшее из четных и количество нечетных элементов вектора.
+
+function getMaxEven(arr) {
+  return Math.max(...arr.filter((el) => Math.abs(el % 2) === 0));
 }
 
-console.log(deleteWordsByChar(lorem, 'i'));
+function getLengthOdd(arr) {
+  return arr.filter((el) => Math.abs(el % 2) === 1).length;
+}
+
+console.log(getMaxEven(array));
+console.log(getLengthOdd(array));
